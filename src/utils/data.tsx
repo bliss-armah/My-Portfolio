@@ -88,7 +88,7 @@ export const skillsData = [
     id: 1,
     title: "front end",
     skills: [
-      { name: "HTML/CSS", value: 50 },
+      { name: "HTML/CSS", value: 80 },
       { name: "Javascript", value: 70 },
       { name: "React", value: 80 },
     ],
@@ -98,8 +98,8 @@ export const skillsData = [
     title: "back end",
     skills: [
       { name: "Node", value: 50 },
-      { name: "PHP", value: 70 },
-      { name: "Python", value: 80 },
+      { name: "Express", value:70 },
+      // { name: "Python", value: 80 },
     ],
   },
 ];

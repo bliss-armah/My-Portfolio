@@ -1,5 +1,6 @@
 import project1 from "../assets/images/project-1.jpeg";
 import videoplay from "../assets/videos/connect.mp4";
+import { Link } from "react-router-dom";
 
 
 const Connect = () => {
@@ -29,7 +30,9 @@ const Connect = () => {
           cupiditate dicta magni quas corrupti aperiam, rerum minus odio totam
           repellendus delectus nostrum veniam!
         </p>
-        <a href="contact.html" className="btn">contact me</a>
+        <Link to="/contact" className="btn">
+        contact me
+            </Link>
       </div>
     </section>
     </div>
