@@ -32,7 +32,10 @@ const Navbar = () => {
       <nav className="nav" id="nav">
         <div className="nav-center">
           <div className="nav-header">
-            <img src={logo} className="nav-logo" alt="nav logo" />
+            <a href="/">
+
+            {/* <img src={logo} className="nav-logo" alt="nav logo" /> */}
+            </a>
             <button className="nav-btn" id="nav-btn" onClick={showSidebar}>
               <FaBars />
             </button>
@@ -42,7 +45,8 @@ const Navbar = () => {
               <a href="/">home</a>
             </li>
             <li>
-              <Link
+              <Link 
+              activeClass="active"
                 to="about"
                 smooth={true}
                 duration={500}
@@ -54,6 +58,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
+              activeClass="active"
                 to="project"
                 smooth={true}
                 duration={500}
@@ -65,7 +70,8 @@ const Navbar = () => {
             </li>
             <li>
             <Link
-                to="contact"
+            activeClass="active"
+              to="contact"
                 smooth={true}
                 duration={500}
                 spy={true}

@@ -1,5 +1,6 @@
 import { socialIcons } from '../utils/data'
 import profile from "../assets/images/IMG_2368.jpg";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
@@ -10,9 +11,17 @@ const Hero = () => {
             <div className="underline"></div>
             <h1>i'm bliss</h1>
             <h4>freelance frontend developer with communication skills</h4>
-            <a href="/" className="btn hero-btn">
-              hire me
-            </a>
+            <Link 
+              activeClass="active"
+                to="contact"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                className="btn hero-btn"
+              >
+                hire me
+              </Link>
             <ul className="social-icons hero-icons">
               {socialIcons.map((icon, index) => (
                 <li key={index}>

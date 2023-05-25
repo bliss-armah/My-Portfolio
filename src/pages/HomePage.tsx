@@ -1,7 +1,6 @@
 import {
   About,
   Connect,
-  Blog,
   Services,
   Skills,
   Timeline,
@@ -25,7 +24,6 @@ const HomePage = () => {
       </div>
       <Skills />
       <Timeline />
-      <Blog />
     </div>
   );
 };

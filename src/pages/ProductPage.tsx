@@ -1,11 +1,9 @@
-import Header from "../components/Header"
-import pic from '../assets/images/project-1.jpeg'
+import { Blog } from "../components"
 
 const ProductPage = () => {
   return (
     <div>
-        <Header name="my projects"/>
-    <section className="section">
+    {/* <section className="section">
       <div className="section-center projects-page-center">
         <article className="single-project">
           <div className="project-container">
@@ -30,7 +28,8 @@ const ProductPage = () => {
           </div>
         </article>
         </div>
-    </section>
+    </section> */}
+    <Blog/>
     </div>
   )
 }

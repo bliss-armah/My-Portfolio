@@ -1,4 +1,4 @@
-import { BsFacebook, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
 import project1 from "../assets/images/project-1.jpeg";
 import project2 from "../assets/images/project-2.jpeg";
 import project3 from "../assets/images/project-3.jpeg";
@@ -7,15 +7,15 @@ import { FaCode, FaSketch, FaAndroid } from "react-icons/fa";
 
 export const socialIcons = [
   {
-    href: "https://www.facebook.com",
-    icon: <BsFacebook />,
-  },
-  {
     href: "https://www.linkedin.com/in/bliss-armah-nwanwah-5b526423a/",
     icon: <BsLinkedin />,
   },
   {
-    href: "https://www.twitter.com",
+    href: "https://github.com/BlissArmah-Nwanwah",
+    icon: <BsGithub />,
+  },
+  {
+    href: "https://twitter.com/BlissAbrantie",
     icon: <BsTwitter />,
   },
   {
@@ -31,7 +31,7 @@ export const projects = [
     title: "Article Title 1",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    readTime: "7 min read",
+    duration: "1 month ago",
   },
   {
     id: 2,
@@ -39,15 +39,15 @@ export const projects = [
     title: "Article Title 2",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    readTime: "7 min read",
+    duration: "2 month ago",
   },
   {
     id: 3,
     image: project3,
     title: "Article Title 3",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    readTime: "7 min read",
+      "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+    duration: "3 month ago",
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ export const projects = [
     title: "Article Title 4",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    readTime: "7 min read",
+      duration: "4 month ago",
   },
 ];
 
@@ -98,7 +98,7 @@ export const skillsData = [
     title: "back end",
     skills: [
       { name: "Node", value: 50 },
-      { name: "Express", value:70 },
+      { name: "Express", value: 60 },
       // { name: "Python", value: 80 },
     ],
   },

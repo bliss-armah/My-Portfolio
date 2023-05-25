@@ -712,6 +712,9 @@ Skills
   width: 50%;
   border-radius: var(--radius);
 }
+.value-60{
+  width: 60%;
+}
 .value-70 {
   width: 70%;
 }
@@ -993,4 +996,9 @@ Products Page
 
 .shows{
   position: relative;
+}
+
+
+.active {
+  color: var(--clr-primary-5) !important;
 }

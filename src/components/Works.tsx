@@ -1,4 +1,5 @@
 import { works } from "../utils/data";
+import { Link } from "react-router-dom";
 
 const Works = () => {
   return (
@@ -18,11 +19,7 @@ const Works = () => {
         </div>
         <div className="section-center projects-center">
           {works.map((project) => (
-            <a
-              href="projects.html"
-              className={project.className}
-              key={project.id}
-            >
+            <Link to="/projects" className={project.className} key={project.id}>
               <article className="project">
                 <img
                   src={project.image}
@@ -34,7 +31,7 @@ const Works = () => {
                   <p>{project.client}</p>
                 </div>
               </article>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
