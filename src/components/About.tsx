@@ -21,7 +21,7 @@ const About = () => {
               HTML, CSS and JavaScript (and its endless list of frameworks). I
               enjoy coding and the challenge of learning something new everyday.
             </p>
-            <Link to="/contact" >
+            <Link to="/about" >
             <ButtonComponent name="about me"/>
             </Link>
           </article>
