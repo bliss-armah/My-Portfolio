@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/Bliss Qodes.svg";
 import { FaBars } from "react-icons/fa";
 import Aside from "./Aside";
 import { Link } from "react-scroll";
@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="nav-header">
             <a href="/">
 
-            {/* <img src={logo} className="nav-logo" alt="nav logo" /> */}
+            <img src={logo} className="nav-logo w-[230px]" alt="nav logo" />
             </a>
             <button className="nav-btn" id="nav-btn" onClick={showSidebar}>
               <FaBars />
