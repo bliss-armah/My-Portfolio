@@ -1,8 +1,8 @@
 import { BsGithub, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
-import project1 from "../assets/images/project-1.jpeg";
-import project2 from "../assets/images/project-2.jpeg";
-import project3 from "../assets/images/project-3.jpeg";
-import project4 from "../assets/images/project-4.jpeg";
+import project1 from "../assets/images/crypto.jpg";
+import project2 from "../assets/images/jobster.jpg";
+import project3 from "../assets/images/invoice.jpg";
+import project4 from "../assets/images/github.jpg";
 import { FaCode, FaSketch, FaAndroid } from "react-icons/fa";
 
 export const socialIcons = [
@@ -28,7 +28,7 @@ export const projects = [
   {
     id: 1,
     image: project1,
-    title: "Article Title 1",
+    title: "project title 1",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
     duration: "1 month ago",
@@ -36,7 +36,7 @@ export const projects = [
   {
     id: 2,
     image: project2,
-    title: "Article Title 2",
+    title: "project title 2",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
     duration: "2 month ago",
@@ -44,7 +44,7 @@ export const projects = [
   {
     id: 3,
     image: project3,
-    title: "Article Title 3",
+    title: "project title 3",
     content:
       "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
     duration: "3 month ago",
@@ -52,10 +52,10 @@ export const projects = [
   {
     id: 4,
     image: project4,
-    title: "Article Title 4",
+    title: "project title 4",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-      duration: "4 month ago",
+    duration: "4 month ago",
   },
 ];
 
@@ -65,21 +65,21 @@ export const servicesData = [
     icon: <FaCode />,
     title: "web development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates corrupti animi saepe quasi excepturi cupiditate voluptate dolor sed obcaecati vero.",
+      "Create and maintain website in a well organize manner and enhance performance (consistency,functionality and design).",
   },
   {
     id: 2,
     icon: <FaSketch />,
     title: "web design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates corrupti animi saepe quasi excepturi cupiditate voluptate dolor sed obcaecati vero.",
+      "Planning, conceptualizing, and arranging content online (responsiveness). Today, designing a website goes beyond aesthetics to include the website’s overall functionality.",
   },
   {
     id: 3,
     icon: <FaAndroid />,
     title: "app design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates corrupti animi saepe quasi excepturi cupiditate voluptate dolor sed obcaecati vero.",
+      "Planning, conceptualizing, and arranging content in app to help user's experience better and easy.",
   },
 ];
 
@@ -108,25 +108,25 @@ export const timelineItems = [
   {
     year: "2023",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequuntur voluptates tempore numquam? Quidem incidunt fugit quasi autem, ea excepturi.",
+      "A significant milestone was achieved as I received my first professional offer as a frontend developer, validating my capabilities and signaling a promising future in the field of web development.",
     number: "1",
   },
   {
     year: "2022",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequuntur voluptates tempore numquam? Quidem incidunt fugit quasi autem, ea excepturi.",
+      "Seizing the opportunity to join Amalitech through national service, I collaborated with a talented team, gaining valuable industry experience and further refining my expertise.",
     number: "2",
   },
   {
     year: "2021",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequuntur voluptates tempore numquam? Quidem incidunt fugit quasi autem, ea excepturi.",
+      "I embarked on a freelance career, working on a range of projects that allowed me to refine my skills and deliver customized solutions for clients.",
     number: "3",
   },
   {
     year: "2020",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione consequuntur voluptates tempore numquam? Quidem incidunt fugit quasi autem, ea excepturi.",
+      "I immersed myself in learning HTML, CSS, and React, actively enhancing my programming abilities and expanding my knowledge in web development.",
     number: "4",
   },
 ];
@@ -135,29 +135,45 @@ export const works = [
   {
     id: 1,
     image: project1,
-    title: "Project 1",
-    client: "Client 1",
+    title: "Cryptocurrency Market",
+    client: "Freelance Work",
     className: "project-1",
+    url: 'https://cryptocurrency-markets.netlify.app/landing',
+    content:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+    duration: "1 month ago",
   },
   {
     id: 2,
     image: project2,
-    title: "Project 2",
-    client: "Client 2",
+    title: "Jobster",
+    client: "Personal Project",
     className: "project-2",
+    url: "/",
+    content:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+    duration: "2 month ago",
   },
   {
     id: 3,
     image: project3,
-    title: "Project 3",
-    client: "Client 3",
+    title: "Invoice",
+    client: "Freelance",
     className: "project-3",
+    url:'https://invoice-app-amalitech.netlify.app/',
+    content:
+    "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+  duration: "3 month ago",
   },
   {
     id: 4,
     image: project4,
-    title: "Project 4",
-    client: "Client 4",
+    title: "Githup Users",
+    client: "Personal Project",
     className: "project-4",
+    url:'https://react-github-users-search-bliss.netlify.app/',
+    content:
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+  duration: "4 month ago",
   },
 ];

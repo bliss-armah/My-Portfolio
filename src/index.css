@@ -1,3 +1,5 @@
+
+
 /*
 =============== 
 Fonts
@@ -5,6 +7,10 @@ Fonts
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /*
 =============== 
 Variables
@@ -491,7 +497,7 @@ Projects
 */
 .projects-text {
   width: 85vw;
-  max-width: 30rem;
+  max-width: 50rem;
   margin: 0 auto;
 }
 .project {

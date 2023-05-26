@@ -1,5 +1,6 @@
 import about from "../assets/images/aboutme.jpg";
 import { Link } from "react-router-dom";
+import ButtonComponent from "./ButtonComponent";
 
 const About = () => {
   return (
@@ -20,8 +21,8 @@ const About = () => {
               HTML, CSS and JavaScript (and its endless list of frameworks). I
               enjoy coding and the challenge of learning something new everyday.
             </p>
-            <Link to="/about" className="btn">
-              about me
+            <Link to="/contact" >
+            <ButtonComponent name="about me"/>
             </Link>
           </article>
         </div>

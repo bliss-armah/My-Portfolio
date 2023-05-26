@@ -1,5 +1,5 @@
 import imageSmall from "../assets/images/hero-img-small.jpeg";
-import { projects } from "../utils/data";
+import {  works } from "../utils/data";
 import { FaHome } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
 
@@ -12,12 +12,12 @@ const Blog = () => {
           <div className="underline"></div>
         </div>
         <div className="section-center blog-center">
-          {projects.map((project) => (
-            <div className="card" key={project.id}>
+          {works.map((project) => (
+            <div className="card shadow" key={project.id}>
               <div className="card-side card-front">
                 <img src={project.image} alt="" />
                 <div className="card-info">
-                  <h4>{project.title}</h4>
+                  <h4 className="font-bold ">{project.title}</h4>
                   <p>{project.content}</p>
                   <div className="card-footer">
                     <img src={imageSmall} alt="author image" />
@@ -29,12 +29,12 @@ const Blog = () => {
                 <article className="single-project">
                   <div className="project-container">
                     <img src={project.image} alt="single project" />
-                    <span className="project-icon">
+                    <a href={project.url} target="_blank" className="project-icon">
                       <FaHome />
-                    </span>
+                    </a >
                   </div>
                   <div className="project-details">
-                    <h4>{project.title}</h4>
+                    <h4  className="font-bold ">{project.title}</h4>
                     <p>{project.content}</p>
                     <div className="project-footer">
                       <span>

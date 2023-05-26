@@ -1,6 +1,7 @@
 import { socialIcons } from '../utils/data'
 import profile from "../assets/images/IMG_2368.jpg";
 import { Link } from "react-scroll";
+import ButtonComponent from './ButtonComponent';
 
 const Hero = () => {
   return (
@@ -18,9 +19,8 @@ const Hero = () => {
                 duration={500}
                 spy={true}
                 offset={-70}
-                className="btn hero-btn"
               >
-                hire me
+                <ButtonComponent name="hire me" styleAdd='hero-btn'/>
               </Link>
             <ul className="social-icons hero-icons">
               {socialIcons.map((icon, index) => (

@@ -11,7 +11,7 @@ const Timeline = () => {
         <div className="section-center timeline-center">
           {timelineItems.map((item, index) => (
             <article className="timeline-item" key={index}>
-              <h4>{item.year}</h4>
+              <h4 className="font-bold">{item.year}</h4>
               <p>{item.content}</p>
               <span className="number">{item.number}</span>
             </article>
