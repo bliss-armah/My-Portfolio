@@ -4,6 +4,7 @@ import Connect from "./Connect";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Navibar from "./Navibar";
 import Services from "./Services";
 import Skills from "./Skills";
 import Timeline from "./Timeline";
@@ -19,4 +20,5 @@ export {
   Timeline,
   Works,
   Hero,
+  Navibar,
 };

@@ -6,11 +6,13 @@ import {
   Timeline,
   Works,
   Hero,
+  Navbar,
 } from "../components";
 
 const HomePage = () => {
   return (
     <div>
+      <Navbar/>
       <Hero />
       <div id="about">
         <About />

@@ -1,11 +1,12 @@
-import { Blog } from "../components"
+import { Blog, Navibar } from "../components";
 
 const ProductPage = () => {
   return (
     <div>
-    <Blog/>
+      <Navibar />
+      <Blog />
     </div>
-  )
-}
+  );
+};
 
-export default ProductPage
+export default ProductPage;

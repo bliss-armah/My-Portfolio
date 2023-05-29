@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { contactForm } from "../utils/data";
 import axios from "axios";
 import { FormData, validationSchema } from "../Schema/Form";
+import { Navibar } from "../components";
 
 const ContactPage: React.FC = () => {
   const initialValues: FormData = {
@@ -67,6 +68,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <div>
+      <Navibar/>
       <Header name="contact us" classy="contact-hero" />
       <section className="section about">
         <div className="section-center about-center">

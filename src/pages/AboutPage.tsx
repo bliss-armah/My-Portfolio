@@ -1,9 +1,13 @@
 import profile from "../assets/images/IMG_2368.jpg";
 import about from "../assets/images/aboutme.jpg";
+import { Navibar } from "../components";
+import Header from "../components/Header";
 const AboutPage = () => {
   return (
     <div>
-      <div className="section-center hero-center">
+      <Navibar />
+      <Header name="About" classy="contact-hero -mb-[150px]" />
+      <div className="section-center hero-center -mt-11">
         <article className="hero-info">
           <div className="section-title about-title">
             <h2>Communication skills</h2>
