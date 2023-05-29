@@ -52,8 +52,8 @@ const ContactPage: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+    e.preventDefault(); // Prevent the default form submission behavior
+    e.stopPropagation();
     if (isFormValid) {
       try {
         await axios.post(
@@ -68,10 +68,10 @@ const ContactPage: React.FC = () => {
 
   return (
     <div>
-      <Navibar/>
-      <Header name="contact us" classy="contact-hero" />
+      <Navibar />
+      <Header name="contact me" classy="contact-hero" />
       <section className="section about">
-        <div className="section-center about-center">
+        <div className="section-center about-center  items-center">
           <article>
             <div className="section-title about-title">
               <h2 className="font-semibold">
@@ -79,16 +79,16 @@ const ContactPage: React.FC = () => {
                 <span className="text-[#e9b949]">from you</span>
               </h2>
             </div>
-            <div className="w-1/2">
+            <div className=" w-full ">
               {contactForm.map((item) => (
                 <div
-                  className="w-[370px] flex justify-between items-center mb-5 -ml-4"
-                  key={item.text}
+                  className=" flex justify-between items-center mb-5"
+                  key={item.id}
                 >
                   <div className="social-icon bg-[#f7d06e] w-[55px] h-[55px] rounded-full flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <div className="text-right text-[1.5rem] text-[#617d98]">
+                  <div className="w-[80%] text-left text-[1.5rem] text-[#617d98]">
                     {item.text}
                   </div>
                 </div>

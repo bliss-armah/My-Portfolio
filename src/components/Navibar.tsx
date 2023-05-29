@@ -14,17 +14,14 @@ const Navibar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector("#nav");
-      if (window.pageYOffset > 80) {
+      if (window.pageYOffset > 85) {
         navbar?.classList.add("navbar-fixed");
       } else {
         navbar?.classList.remove("navbar-fixed");
       }
     };
     window.addEventListener("scroll", handleScroll);
-    // Cleanup the event listener on unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+  
   }, []);
 
   return (
