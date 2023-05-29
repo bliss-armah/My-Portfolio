@@ -1,68 +1,90 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import * as Yup from "yup";
 import Header from "../components/Header";
-import { BsTelephone } from "react-icons/bs";
-import { FiMail } from "react-icons/fi";
-import { GoLocation } from "react-icons/go";
+import { contactForm } from "../utils/data";
+import axios from "axios";
+import { FormData, validationSchema } from "../Schema/Form";
 
-interface FormData {
-  fullname: string;
-  email: string;
-  message: string;
-}
-
-const ContactPage = () => {
-  const [formData, setFormData] = useState<FormData>({
+const ContactPage: React.FC = () => {
+  const initialValues: FormData = {
     fullname: "",
+    number: "",
     email: "",
     message: "",
-  });
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [e.target.name]: e.target.value,
-    }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const [formData, setFormData] = useState<FormData>(initialValues);
+  const [formErrors, setFormErrors] = useState<FormData>(initialValues);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+    validateField(name, value);
+  };
+
+  const validateField = (fieldName: string, value: string) => {
+    (Yup.reach(validationSchema, fieldName) as Yup.StringSchema<string>)
+      .validate(value)
+      .then(() => {
+        setFormErrors((prevErrors) => ({
+          ...prevErrors,
+          [fieldName]: "",
+        }));
+      })
+      .catch((err: Yup.ValidationError) => {
+        setFormErrors((prevErrors) => ({
+          ...prevErrors,
+          [fieldName]: err.message,
+        }));
+      });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // You can perform any necessary actions with the form data here
-    console.log(formData);
-    // Reset the form fields
-    setFormData({
-      fullname: "",
-      email: "",
-      message: "",
-    });
+
+    try {
+      await axios.post("https://mail-service-pbac.onrender.com/send", formData)
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div>
       <Header name="contact us" classy="contact-hero" />
-      <section className="section about ">
-        <div className="section-center about-center ">
+      <section className="section about">
+        <div className="section-center about-center">
           <article>
             <div className="section-title about-title">
               <h2 className="font-semibold">
                 we would love to hear{" "}
-                <span className="text-[#e9b949]">from you</span>{" "}
+                <span className="text-[#e9b949]">from you</span>
               </h2>
             </div>
-              <div className=" w-[290px] flex justify-between items-center ">
-                <div className="social-icon bg-[#f7d06e] w-[55px] h-[55px] rounded-full flex items-center justify-center">
-                  <BsTelephone />
+            <div className="w-1/2">
+              {contactForm.map((item) => (
+                <div
+                  className="w-[370px] flex justify-between items-center mb-5 -ml-4"
+                  key={item.text}
+                >
+                  <div className="social-icon bg-[#f7d06e] w-[55px] h-[55px] rounded-full flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <div className="text-right text-[1.5rem] text-[#617d98]">
+                    {item.text}
+                  </div>
                 </div>
-                <div className=" text-center text-[1.5rem] text-[#617d98]">
-                  +233245289983
-                </div>
-              </div>
+              ))}
+            </div>
           </article>
           <article className="about-info ml-8">
-            <div className="w-3/4 p-2 ">
-              {/* Form on the right */}
-              <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="w-3/4 p-2">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="fullname" className="block mb-1">
                     Full Name
@@ -72,9 +94,40 @@ const ContactPage = () => {
                     id="fullname"
                     name="fullname"
                     value={formData.fullname}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e9b949]"
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none  ${
+                      formErrors.fullname
+                        ? "border-red-500"
+                        : "focus:ring-[#e9b949]"
+                    }`}
                   />
+                  {formErrors.fullname && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formErrors.fullname}
+                    </p>
+                  )}
+                </div>
+                 <div>
+                  <label htmlFor="number" className="block mb-1">
+                   Phone Number
+                  </label>
+                  <input
+                    type="number"
+                    id="number"
+                    name="number"
+                    value={formData.number}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none  ${
+                      formErrors.number
+                        ? "border-red-500"
+                        : "focus:ring-[#e9b949]"
+                    }`}
+                  />
+                  {formErrors.number && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formErrors.number}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email" className="block mb-1">
@@ -85,9 +138,18 @@ const ContactPage = () => {
                     id="email"
                     name="email"
                     value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e9b949]"
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none  ${
+                      formErrors.email
+                        ? "border-red-500"
+                        : "focus:ring-[#e9b949]"
+                    }`}
                   />
+                  {formErrors.email && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formErrors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="message" className="block mb-1">
@@ -96,14 +158,23 @@ const ContactPage = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e9b949]"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-2 border rounded-md focus:outline-none  ${
+                      formErrors.message
+                        ? "border-red-500"
+                        : "focus:ring-[#e9b949]"
+                    }`}
                   />
+                  {formErrors.message && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {formErrors.message}
+                    </p>
+                  )}
                 </div>
                 <div>
-                  <button type="submit" className="btn">
+                  <button type="submit" className="btn" >
                     Submit
                   </button>
                 </div>

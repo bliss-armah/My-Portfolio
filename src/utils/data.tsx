@@ -1,9 +1,17 @@
-import { BsGithub, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
+import {
+  BsGithub,
+  BsLinkedin,
+  BsTwitter,
+  BsInstagram,
+  BsTelephone,
+} from "react-icons/bs";
 import project1 from "../assets/images/crypto.jpg";
 import project2 from "../assets/images/jobster.jpg";
 import project3 from "../assets/images/invoice.jpg";
 import project4 from "../assets/images/github.jpg";
 import { FaCode, FaSketch, FaAndroid } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { GoLocation } from "react-icons/go";
 
 export const socialIcons = [
   {
@@ -138,7 +146,7 @@ export const works = [
     title: "Cryptocurrency Market",
     client: "Freelance Work",
     className: "project-1",
-    url: 'https://cryptocurrency-markets.netlify.app/landing',
+    url: "https://cryptocurrency-markets.netlify.app/landing",
     content:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
     duration: "1 month ago",
@@ -160,10 +168,10 @@ export const works = [
     title: "Invoice",
     client: "Freelance",
     className: "project-3",
-    url:'https://invoice-app-amalitech.netlify.app/',
+    url: "https://invoice-app-amalitech.netlify.app/",
     content:
-    "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-  duration: "3 month ago",
+      "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+    duration: "3 month ago",
   },
   {
     id: 4,
@@ -171,9 +179,15 @@ export const works = [
     title: "Githup Users",
     client: "Personal Project",
     className: "project-4",
-    url:'https://react-github-users-search-bliss.netlify.app/',
+    url: "https://react-github-users-search-bliss.netlify.app/",
     content:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-  duration: "4 month ago",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+    duration: "4 month ago",
   },
+];
+
+export const contactForm = [
+  { id: 1, icon: <BsTelephone />, text: "+233245289983" },
+  { id: 2, icon: <FiMail />, text: "blissarmah8@gmail.com"},
+  { id: 3, icon: <GoLocation />, text: "Tarkwa, Ghana" },
 ];
