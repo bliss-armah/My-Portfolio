@@ -343,6 +343,11 @@ Sidebar
 .close-btn:hover {
   color: #e66b6b;
 }
+.btn-disabled {
+  background-color: var(--clr-primary-8);
+  cursor: not-allowed;
+}
+
 /*
 =============== 
 Hero

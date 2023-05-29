@@ -23,5 +23,5 @@ export const validationSchema: ObjectSchema<FormData> = Yup.object().shape({
       "Invalid email address"
     )
     .required("Email is required"),
-  message: Yup.string().required("Message is required"),
+  message: Yup.string().min(7, "message must be at least 7 characters").required("Message is required"),
 });

@@ -15,6 +15,7 @@ const ContactPage: React.FC = () => {
 
   const [formData, setFormData] = useState<FormData>(initialValues);
   const [formErrors, setFormErrors] = useState<FormData>(initialValues);
+  const [isFormValid, setIsFormValid] = useState<Boolean>(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -41,16 +42,26 @@ const ContactPage: React.FC = () => {
           ...prevErrors,
           [fieldName]: err.message,
         }));
+      })
+      .finally(() => {
+        // Check if all form fields are valid
+        const isValid = Object.values(formErrors).every((error) => !error);
+        setIsFormValid(isValid);
       });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      await axios.post("https://mail-service-pbac.onrender.com/send", formData)
-    } catch (error) {
-      console.error(error);
+    if (isFormValid) {
+      try {
+        await axios.post(
+          "https://mail-service-pbac.onrender.com/send",
+          formData
+        );
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -86,7 +97,10 @@ const ContactPage: React.FC = () => {
             <div className="w-3/4 p-2">
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
-                  <label htmlFor="fullname" className="block mb-1">
+                  <label
+                    htmlFor="fullname"
+                    className="block mb-1 text-[1.1rem] text-[#617d98] "
+                  >
                     Full Name
                   </label>
                   <input
@@ -107,9 +121,12 @@ const ContactPage: React.FC = () => {
                     </p>
                   )}
                 </div>
-                 <div>
-                  <label htmlFor="number" className="block mb-1">
-                   Phone Number
+                <div>
+                  <label
+                    htmlFor="number"
+                    className="block mb-1 text-[1.1rem] text-[#617d98]"
+                  >
+                    Phone Number
                   </label>
                   <input
                     type="number"
@@ -130,7 +147,10 @@ const ContactPage: React.FC = () => {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block mb-1 text-[1.1rem] text-[#617d98]"
+                  >
                     Email
                   </label>
                   <input
@@ -152,7 +172,10 @@ const ContactPage: React.FC = () => {
                   )}
                 </div>
                 <div>
-                  <label htmlFor="message" className="block mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block mb-1 text-[1.1rem] text-[#617d98]"
+                  >
                     Message
                   </label>
                   <textarea
@@ -174,7 +197,11 @@ const ContactPage: React.FC = () => {
                   )}
                 </div>
                 <div>
-                  <button type="submit" className="btn" >
+                  <button
+                    type="submit"
+                    className={`btn ${isFormValid ? "" : "btn-disabled"}`}
+                    disabled={!isFormValid}
+                  >
                     Submit
                   </button>
                 </div>
