@@ -29,6 +29,7 @@ const Aside = ({ show }: asideProp) => {
                 duration={500}
                 spy={true}
                 offset={-70}
+                onClick={() => show(false)}
               >
                 about
               </Link>
@@ -41,6 +42,7 @@ const Aside = ({ show }: asideProp) => {
                 duration={500}
                 spy={true}
                 offset={-70}
+                onClick={() => show(false)}
               >
                 projects
               </Link>
@@ -53,6 +55,7 @@ const Aside = ({ show }: asideProp) => {
                 duration={500}
                 spy={true}
                 offset={-70}
+                onClick={() => show(false)}
               >
                 contact
               </Link>
