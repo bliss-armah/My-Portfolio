@@ -1,8 +1,8 @@
 import {useState,useEffect} from "react";
 import logo from "../assets/images/Bliss Qodes.svg";
 import { FaBars } from "react-icons/fa";
-import Aside from "./Aside";
 import { NavLink } from "react-router-dom";
+import SmallAside from "./SmallAside";
 
 const Navibar = () => {
   const [show, setShow] = useState(false);
@@ -53,7 +53,7 @@ const Navibar = () => {
         </div>
       </nav>
 
-      {show && <Aside show={setShow} />}
+      {show && <SmallAside show={setShow} />}
     </div>
   );
 };

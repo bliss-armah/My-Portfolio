@@ -1,5 +1,6 @@
 import { FaTimes } from "react-icons/fa";
 import { socialIcons } from "../utils/data";
+import { Link } from "react-scroll";
 
 interface asideProp {
   show: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,16 +19,43 @@ const Aside = ({ show }: asideProp) => {
           </button>
           <ul className="sidebar-links">
             <li>
-              <a href="index.html">home</a>
+              <a href="/">home</a>
             </li>
             <li>
-              <a href="about.html">about</a>
+              <Link
+                activeClass="active"
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+              >
+                about
+              </Link>
             </li>
             <li>
-              <a href="projects.html">projects</a>
+              <Link
+                activeClass="active"
+                to="project"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+              >
+                projects
+              </Link>
             </li>
             <li>
-              <a href="contact.html">contact</a>
+              <Link
+                activeClass="active"
+                to="contact"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+              >
+                contact
+              </Link>
             </li>
           </ul>
           <ul className="social-icons">
