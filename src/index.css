@@ -841,7 +841,7 @@ Blog
   background: var(--clr-white);
 }
 .card-back {
-  background: var(--clr-primary-10);
+  background: transparent;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   display: grid;

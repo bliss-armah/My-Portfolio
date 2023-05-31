@@ -27,7 +27,7 @@ export const socialIcons = [
     icon: <BsTwitter />,
   },
   {
-    href: "https://www.instagram.com",
+    href: "https://www.instagram.com/_wonderful.bliss/",
     icon: <BsInstagram />,
   },
 ];
@@ -148,7 +148,7 @@ export const works = [
     className: "project-1",
     url: "https://cryptocurrency-markets.netlify.app/landing",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+      "Stay updated with trending cryptocurrencies and manage your watchlist effortlessly with our user-friendly platform.",
     duration: "1 month ago",
   },
   {
@@ -159,7 +159,7 @@ export const works = [
     className: "project-2",
     url: "/",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+      "Empower admins to effortlessly add job opportunities while enabling users to find, apply, and work on projects seamlessly.",
     duration: "2 month ago",
   },
   {
@@ -170,7 +170,7 @@ export const works = [
     className: "project-3",
     url: "https://invoice-app-amalitech.netlify.app/",
     content:
-      "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+      "Effortlessly track and mark invoices with our user-friendly app, streamlining your billing process and ensuring accurate records.",
     duration: "3 month ago",
   },
   {
@@ -181,13 +181,13 @@ export const works = [
     className: "project-4",
     url: "https://react-github-users-search-bliss.netlify.app/",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
+      " Discover talented developers and explore their repositories, followers, and key information in a comprehensive chart view.",
     duration: "4 month ago",
   },
 ];
 
 export const contactForm = [
   { id: 1, icon: <BsTelephone />, text: "+233245289983" },
-  { id: 2, icon: <FiMail />, text: "blissarmah8@gmail.com"},
+  { id: 2, icon: <FiMail />, text: "blissarmah8@gmail.com" },
   { id: 3, icon: <GoLocation />, text: "Tarkwa, Ghana" },
 ];
