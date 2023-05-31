@@ -10,7 +10,7 @@ export interface FormData {
 
 export const validationSchema: ObjectSchema<FormData> = Yup.object().shape({
   fullname: Yup.string()
-    .min(10, "fullname must be at least 10 characters")
+    .min(1, "Fullname is required") 
     .max(30, "fullname must be 30 characters or less")
     .required("Full Name is required"),
   number: Yup.string()
