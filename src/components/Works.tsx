@@ -1,8 +1,27 @@
 import { works } from "../utils/data";
 import { Link } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent";
+import { useEffect, useState } from "react";
 
 const Works = () => {
+
+  const [projects,setProjects]= useState()
+
+  const getProducts = async () => {
+    try {
+      const response = await fetch('https://portfolio-ix0m.onrender.com/api/v1/project');
+      const data = await response.json();
+      console.log(data); // Do something with the parsed data
+  
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(()=>{
+    getProducts()
+  },[])
+
   return (
     <div>
       <section className="section projects">
