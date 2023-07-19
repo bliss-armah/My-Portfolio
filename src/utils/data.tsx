@@ -96,18 +96,18 @@ export const skillsData = [
     id: 1,
     title: "front end",
     skills: [
-      { name: "HTML/CSS", value: 80 },
-      { name: "Javascript", value: 70 },
-      { name: "React", value: 80 },
+      { name: "HTML/CSS", value: 90 },
+      { name: "Javascript", value: 80 },
+      { name: "React Js/Ts", value: 90 },
+      { name: "NextJs", value: 80 },
     ],
   },
   {
     id: 2,
     title: "back end",
     skills: [
-      { name: "Node", value: 50 },
-      { name: "Express", value: 60 },
-      // { name: "Python", value: 80 },
+      { name: "Node", value: 70 },
+      { name: "Node/Express", value: 80 },
     ],
   },
 ];

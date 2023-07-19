@@ -732,6 +732,9 @@ Skills
 .value-80 {
   width: 80%;
 }
+.value-90 {
+  width: 90%;
+}
 .skill-text {
   position: absolute;
   top: -2rem;
@@ -824,8 +827,8 @@ Blog
   perspective: 1500px;
 }
 .card-side {
-  -webkit-transition: all 2s linear;
-  transition: all 2s linear;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
