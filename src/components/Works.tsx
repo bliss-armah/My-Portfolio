@@ -1,11 +1,10 @@
 import { works } from "../utils/data";
 import { Link } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Works = () => {
 
-  const [projects,setProjects]= useState()
 
   const getProducts = async () => {
     try {
