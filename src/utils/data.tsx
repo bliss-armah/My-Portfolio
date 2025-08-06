@@ -80,7 +80,7 @@ export const servicesData = [
     icon: <FaSketch />,
     title: "web design",
     description:
-      "Planning, conceptualizing, and arranging content online (responsiveness). Today, designing a website goes beyond aesthetics to include the website’s overall functionality.",
+      "Planning, conceptualizing, and arranging content online (responsiveness). Today, designing a website goes beyond aesthetics to include the website's overall functionality.",
   },
   {
     id: 3,
@@ -114,28 +114,22 @@ export const skillsData = [
 
 export const timelineItems = [
   {
+    year: "2024",
+    content:
+      "Evolved into a fullstack developer with AWS Cloud Practitioner certification, expanding my expertise to include cloud architecture and deployment strategies for scalable web applications.",
+    number: "1",
+  },
+  {
     year: "2023",
     content:
-      "A significant milestone was achieved as I received my first professional offer as a frontend developer, validating my capabilities and signaling a promising future in the field of web development.",
-    number: "1",
+      "Achieved a significant milestone by securing my first professional role as a frontend developer, marking the beginning of my journey in building production-level applications and working with development teams.",
+    number: "2",
   },
   {
     year: "2022",
     content:
-      "Seizing the opportunity to join Amalitech through national service, I collaborated with a talented team, gaining valuable industry experience and further refining my expertise.",
-    number: "2",
-  },
-  {
-    year: "2021",
-    content:
-      "I embarked on a freelance career, working on a range of projects that allowed me to refine my skills and deliver customized solutions for clients.",
+      "Embarked on my national service journey, diving deep into professional software development while collaborating with experienced developers and contributing to real-world projects that impact users daily.",
     number: "3",
-  },
-  {
-    year: "2020",
-    content:
-      "I immersed myself in learning HTML, CSS, and React, actively enhancing my programming abilities and expanding my knowledge in web development.",
-    number: "4",
   },
 ];
 

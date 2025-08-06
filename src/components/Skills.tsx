@@ -7,6 +7,8 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
+  FaAws,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -17,7 +19,7 @@ import {
   SiRedis,
   SiJira,
   SiTailwindcss,
-  SiVite,
+  SiFastapi,
 } from "react-icons/si";
 
 const skillsData = [
@@ -32,7 +34,6 @@ const skillsData = [
       { name: "React", icon: <FaReact />, color: "#61DAFB" },
       { name: "Next.js", icon: <SiNextdotjs />, color: "#000000" },
       { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#06B6D4" },
-      { name: "Vite", icon: <SiVite />, color: "#646CFF" },
     ],
   },
   {
@@ -41,6 +42,8 @@ const skillsData = [
     skills: [
       { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
       { name: "Express", icon: <SiExpress />, color: "#000000" },
+      { name: "Python", icon: <FaPython />, color: "#3776AB" },
+      { name: "FastAPI", icon: <SiFastapi />, color: "#009688" },
       { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
       { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
       { name: "Redis", icon: <SiRedis />, color: "#DC382D" },
@@ -48,8 +51,9 @@ const skillsData = [
   },
   {
     id: 3,
-    title: "tools & workflow",
+    title: "cloud & tools",
     skills: [
+      { name: "AWS", icon: <FaAws />, color: "#FF9900" },
       { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
       { name: "GitHub", icon: <FaGithub />, color: "#181717" },
       { name: "Jira", icon: <SiJira />, color: "#0052CC" },
