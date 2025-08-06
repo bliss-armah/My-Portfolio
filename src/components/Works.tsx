@@ -1,75 +1,129 @@
+import { motion } from "framer-motion";
+import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
 import { works } from "../utils/data";
 import { Link } from "react-router-dom";
 import ButtonComponent from "./ButtonComponent";
 import { useEffect } from "react";
 
 const Works = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3,
+      },
+    },
+  };
 
+  const projectVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
 
   const getProducts = async () => {
     try {
-      const response = await fetch('https://portfolio-ix0m.onrender.com/api/v1/project');
+      const response = await fetch(
+        "https://portfolio-ix0m.onrender.com/api/v1/project"
+      );
       const data = await response.json();
       console.log(data); // Do something with the parsed data
-  
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(()=>{
-    getProducts()
-  },[])
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
-    <div>
-      <section className="section projects">
-        <div className="section-title">
-          <h2>latest works</h2>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <section className="section">
+        <motion.div
+          className="section-title"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2>Latest Works</h2>
           <div className="underline"></div>
           <p className="projects-text">
-            In this section, you'll get an exciting glimpse into the diverse
-            range of projects I've worked on. Each project represents a unique
-            opportunity for me to explore and apply my skills, pushing the
-            boundaries of creativity and innovation. As you browse through the
-            showcased projects, you'll find a captivating selection of visually
-            stunning and highly functional websites and web applications.
-            I've poured my passion into crafting exceptional user interfaces and
-            seamless user experiences. When you click on a project, you'll be
-            seamlessly redirected to its dedicated project page. You'll
-            also have the chance to explore the project in-depth, experiencing
-            its interactive elements firsthand. Prepare to be inspired as you
-            embark on a journey through my latest works. Whether you're a fellow
-            developer seeking inspiration, a potential client evaluating my
-            capabilities, or simply an enthusiast of cutting-edge web design,
-            this section will provide a captivating overview of my recent
-            accomplishments in the ever-evolving world of frontend development.
+            Here are some of my recent projects that showcase my skills in web
+            development, from frontend interfaces to full-stack applications.
           </p>
-        </div>
-        <div className="section-center projects-center ">
+        </motion.div>
+        <motion.div
+          className="section-center projects-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {works.map((project) => (
-            <a href={project.url} target="_blank"  className={project.className} key={project.id}>
-              <article className="project shadow-lg">
-                <img
-                  src={project.image}
-                  alt="single project"
-                  className="project-img"
-                />
-                <div className="project-info">
-                  <h4 className="font-bold">{project.title}</h4>
-                  <p>{project.client}</p>
+            <motion.article
+              key={project.id}
+              className={`project ${project.className}`}
+              variants={projectVariants}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <motion.img
+                src={project.image}
+                alt={project.title}
+                className="project-img"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className="project-info"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileHover={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.3 },
+                }}
+              >
+                <h4>{project.title}</h4>
+                <p>{project.content}</p>
+                <div className="project-footer">
+                  <span>
+                    <FaGithubSquare className="project-icon" />
+                  </span>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaShareSquare className="project-icon" />
+                  </a>
                 </div>
-              </article>
-            </a>
+              </motion.div>
+            </motion.article>
           ))}
-        </div>
-        <div className="section-title mt-5">
-          <Link to="/projects" >
-        <ButtonComponent name="view all projects" styleAdd="hero-btn"/>
-          </Link>
-        </div>
+        </motion.div>
+        <Link to="/product" className="btn center-btn">
+          projects
+        </Link>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,10 +1,16 @@
-import project1 from "../assets/images/project-1.jpeg";
-import videoplay from "../assets/videos/connect.mp4";
+import { motion } from "framer-motion";
+import connectVideo from "../assets/videos/connect.mp4";
 import { Link } from "react-router-dom";
+import ButtonComponent from "./ButtonComponent";
 
 const Connect = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <section className="connect">
         <video
           controls
@@ -12,32 +18,59 @@ const Connect = () => {
           muted
           loop
           className="video-container"
-          poster={project1}
+          poster=""
         >
-          <source src={videoplay} type="video/mp4" />
-          Sorry, your browser does not support embedded videos
+          <source src={connectVideo} type="video/mp4" />
+          sorry, your browser does not support embedded videos
         </video>
-        <div className="video-banner">
-          <div className="section-title">
+        <motion.div
+          className="video-banner"
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+              duration: 0.8,
+              ease: "easeOut",
+            },
+          }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="section-title"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             <h2>let's get in touch</h2>
             <div className="underline"></div>
-          </div>
-          <p className="video-text">
-            Here, we can connect and explore exciting opportunities for
-            collaboration. Whether you have inquiries, job requests, or simply
-            want to say hello, I'm thrilled to hear from you. You can reach out
-            to me through the contact form provided or utilize the available
-            contact information. Let's discuss your project requirements, share
-            ideas, and together, we can bring your vision to life. I'm eagerly
-            waiting to get in touch and embark on a fruitful journey of creating
-            something exceptional together.
-          </p>
-          <Link to="/contact" className="btn">
-            contact me
-          </Link>
-        </div>
+          </motion.div>
+          <motion.p
+            className="video-text"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            Ready to bring your ideas to life? I'd love to hear about your
+            project and discuss how we can work together to create something
+            amazing.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+          >
+            <Link to="/contact">
+              <ButtonComponent name="contact me" />
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

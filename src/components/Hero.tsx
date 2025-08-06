@@ -1,44 +1,97 @@
-import { socialIcons } from '../utils/data'
+import { socialIcons } from "../utils/data";
 import profile from "../assets/images/IMG_2368.jpg";
 import { Link } from "react-scroll";
-import ButtonComponent from './ButtonComponent';
+import ButtonComponent from "./ButtonComponent";
+import AnimatedBackground from "./AnimatedBackground";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div>
-        <header className="hero">
+      <header className="hero">
         <div className="section-center hero-center">
-          <article className="hero-info">
-            <div className="underline"></div>
-            <h1>i'm bliss</h1>
-            <h4>freelance frontend developer with communication skills</h4>
-            <Link 
-              activeClass="active"
+          <motion.article
+            className="hero-info"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div className="underline" variants={itemVariants} />
+            <motion.h1 variants={itemVariants}>i'm bliss</motion.h1>
+            <motion.h4 variants={itemVariants}>
+              freelance frontend developer with communication skills
+            </motion.h4>
+            <motion.div variants={itemVariants}>
+              <Link
+                activeClass="active"
                 to="contact"
                 smooth={true}
                 duration={500}
                 spy={true}
                 offset={-70}
               >
-                <ButtonComponent name="hire me" styleAdd='hero-btn'/>
+                <ButtonComponent name="hire me" styleAdd="hero-btn" />
               </Link>
-            <ul className="social-icons hero-icons">
+            </motion.div>
+            <motion.ul
+              className="social-icons hero-icons"
+              variants={itemVariants}
+            >
               {socialIcons.map((icon, index) => (
-                <li key={index}>
+                <motion.li
+                  key={index}
+                  whileHover={{
+                    scale: 1.2,
+                    transition: { duration: 0.2 },
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <a href={icon.href} target="_blank" className="social-icon">
                     {icon.icon}
                   </a>
-                </li>
+                </motion.li>
               ))}
-            </ul>
-          </article>
-          <article className="hero-img">
-            <img src={profile} className="hero-photo" alt="john doe" />
-          </article>
+            </motion.ul>
+          </motion.article>
+          <motion.article
+            className="hero-img"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+              ease: "easeOut",
+            }}
+          >
+            <AnimatedBackground className="hero-photo" />
+          </motion.article>
         </div>
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

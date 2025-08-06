@@ -1,12 +1,9 @@
-
-
 /*
 =============== 
 Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-
 
 @tailwind base;
 @tailwind components;
@@ -678,76 +675,72 @@ Connect
   );
   clip-path: polygon(50% 0%, 100% 10%, 100% 90%, 50% 100%, 0 90%, 0 10%);
 }
+
 /*
 =============== 
-Skills
+Skills - New Icon-based Layout
 ===============
 */
 @media screen and (min-width: 768px) {
   .skills-center {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    -webkit-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-    column-gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .skills-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .skills {
   background: var(--clr-primary-9);
 }
+
 .skills h3 {
   margin: 1.5rem 0;
   color: var(--clr-primary-1);
+  text-align: center;
 }
-.skill {
-  margin-bottom: 1.25rem;
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
-.skill p {
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
-  color: var(--clr-primary-1);
-}
-.skill-container {
+
+.skill-item {
   background: var(--clr-white);
-  height: 1rem;
-  width: 100%;
+  padding: 1.5rem 1rem;
   border-radius: var(--radius);
-  position: relative;
+  text-align: center;
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  cursor: pointer;
 }
-.skill-value {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: var(--clr-primary-5);
-  height: 100%;
-  width: 50%;
-  border-radius: var(--radius);
+
+.skill-item:hover {
+  box-shadow: var(--dark-shadow);
+  transform: translateY(-2px);
 }
-.value-60{
-  width: 60%;
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
-.value-70 {
-  width: 70%;
+
+.skill-name {
+  color: var(--clr-primary-1);
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 0.9rem;
 }
-.value-80 {
-  width: 80%;
-}
-.value-90 {
-  width: 90%;
-}
-.skill-text {
-  position: absolute;
-  top: -2rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-.skill-text-70 {
-  left: 70%;
-}
-.skill-text-80 {
-  left: 80%;
-}
+
 /*
 =============== 
 Timeline
@@ -909,7 +902,6 @@ Footer
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
-
 }
 .footer .social-icon {
   color: var(--clr-primary-5);
@@ -1016,10 +1008,9 @@ Products Page
   gap: 3rem 1rem;
 }
 
-.shows{
+.shows {
   position: relative;
 }
-
 
 .active {
   color: var(--clr-primary-5) !important;
