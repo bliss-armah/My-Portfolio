@@ -1,5 +1,4 @@
 import { socialIcons } from "../utils/data";
-import profile from "../assets/images/IMG_2368.jpg";
 import { Link } from "react-scroll";
 import ButtonComponent from "./ButtonComponent";
 import AnimatedBackground from "./AnimatedBackground";

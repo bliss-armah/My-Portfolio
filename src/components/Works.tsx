@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
 import { works } from "../utils/data";
-import { Link } from "react-router-dom";
-import ButtonComponent from "./ButtonComponent";
+import { Link } from "react-router-dom"
 import { useEffect } from "react";
 
 const Works = () => {
@@ -119,9 +118,11 @@ const Works = () => {
             </motion.article>
           ))}
         </motion.div>
-        <Link to="/product" className="btn center-btn">
-          projects
-        </Link>
+        <div className="flex justify-center items-center mt-5">
+          <Link to="/product" className="btn">
+            projects
+          </Link>
+        </div>
       </section>
     </motion.div>
   );
