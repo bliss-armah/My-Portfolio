@@ -41,7 +41,8 @@ const Hero = () => {
             <motion.div className="underline" variants={itemVariants} />
             <motion.h1 variants={itemVariants}>i'm bliss</motion.h1>
             <motion.h4 variants={itemVariants}>
-              freelance frontend developer with communication skills
+              Full-stack developer with a strong foundation in frontend
+              development and excellent communication skills.
             </motion.h4>
             <motion.div variants={itemVariants}>
               <Link

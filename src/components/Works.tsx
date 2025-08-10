@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
 import { works } from "../utils/data";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const Works = () => {
