@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
 import { works } from "../utils/data";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const Works = () => {
   const containerVariants = {
@@ -28,22 +27,6 @@ const Works = () => {
       },
     },
   };
-
-  const getProducts = async () => {
-    try {
-      const response = await fetch(
-        "https://portfolio-ix0m.onrender.com/api/v1/project"
-      );
-      const data = await response.json();
-      console.log(data); // Do something with the parsed data
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   return (
     <motion.div
@@ -103,9 +86,13 @@ const Works = () => {
                 <h4>{project.title}</h4>
                 <p>{project.content}</p>
                 <div className="project-footer">
-                  <span>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaGithubSquare className="project-icon" />
-                  </span>
+                  </a>
                   <a
                     href={project.url}
                     target="_blank"
@@ -119,8 +106,8 @@ const Works = () => {
           ))}
         </motion.div>
         <div className="flex justify-center items-center mt-5">
-          <Link to="/product" className="btn">
-            projects
+          <Link to="/projects" className="btn">
+            All Projects
           </Link>
         </div>
       </section>

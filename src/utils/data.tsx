@@ -5,10 +5,8 @@ import {
   BsInstagram,
   BsTelephone,
 } from "react-icons/bs";
-import project1 from "../assets/images/crypto.jpg";
-import project2 from "../assets/images/jobster.jpg";
-import project3 from "../assets/images/invoice.jpg";
 import project4 from "../assets/images/github.jpg";
+import skuulbe from "../assets/images/skuulbe.png";
 import { FaCode, FaSketch, FaAndroid } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
@@ -35,35 +33,19 @@ export const socialIcons = [
 export const projects = [
   {
     id: 1,
-    image: project1,
-    title: "project title 1",
+    image: project4,
+    title: "GitHub Users",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    duration: "1 month ago",
+      "Discover talented developers and explore their repositories, followers, and key information in a comprehensive chart view.",
+    duration: "3 years ago",
   },
   {
     id: 2,
-    image: project2,
-    title: "project title 2",
+    image: skuulbe,
+    title: "School Management System",
     content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    duration: "2 month ago",
-  },
-  {
-    id: 3,
-    image: project3,
-    title: "project title 3",
-    content:
-      "Lorem ipsum,dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    duration: "3 month ago",
-  },
-  {
-    id: 4,
-    image: project4,
-    title: "project title 4",
-    content:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et nisi ut a est eum tempora dolorum temporibus voluptatibus! Natus, provident.",
-    duration: "4 month ago",
+      "A comprehensive school management platform for handling student enrollment, class schedules, teacher management, and academic performance tracking.",
+    duration: "A years ago",
   },
 ];
 
@@ -136,47 +118,27 @@ export const timelineItems = [
 export const works = [
   {
     id: 1,
-    image: project1,
-    title: "Cryptocurrency Market",
-    client: "Freelance Work",
+    image: project4,
+    title: "GitHub Users",
+    client: "Personal Project",
     className: "project-1",
-    url: "https://cryptocurrency-markets.netlify.app/landing",
+    url: "https://react-github-users-search-bliss.netlify.app/",
+    githubUrl: "https://github.com/BlissArmah-Nwanwah",
     content:
-      "Stay updated with trending cryptocurrencies and manage your watchlist effortlessly with our user-friendly platform.",
-    duration: "1 month ago",
+      "Discover talented developers and explore their repositories, followers, and key information in a comprehensive chart view.",
+    duration: "4 months ago",
   },
   {
     id: 2,
-    image: project2,
-    title: "Jobster",
-    client: "Personal Project",
+    image: skuulbe,
+    title: "School Management System",
+    client: "Freelance Work",
     className: "project-2",
-    url: "/",
+    url: "https://demo.skuulbe.com/login",
+    githubUrl: "https://github.com/BlissArmah-Nwanwah",
     content:
-      "Empower admins to effortlessly add job opportunities while enabling users to find, apply, and work on projects seamlessly.",
-    duration: "2 month ago",
-  },
-  {
-    id: 3,
-    image: project3,
-    title: "Invoice",
-    client: "Freelance",
-    className: "project-3",
-    url: "https://invoice-app-amalitech.netlify.app/",
-    content:
-      "Effortlessly track and mark invoices with our user-friendly app, streamlining your billing process and ensuring accurate records.",
-    duration: "3 month ago",
-  },
-  {
-    id: 4,
-    image: project4,
-    title: "Githup Users",
-    client: "Personal Project",
-    className: "project-4",
-    url: "https://react-github-users-search-bliss.netlify.app/",
-    content:
-      " Discover talented developers and explore their repositories, followers, and key information in a comprehensive chart view.",
-    duration: "4 month ago",
+      "A comprehensive school management platform for handling student enrollment, class schedules, teacher management, and academic performance tracking.",
+    duration: "6 months ago",
   },
 ];
 
