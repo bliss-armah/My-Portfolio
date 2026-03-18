@@ -1,4 +1,41 @@
-<svg width="92" height="86" viewBox="0 0 92 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M84 0H8C3.58172 0 0 3.58172 0 8V77.6552C0 82.0735 3.58172 85.6552 8 85.6552H84C88.4183 85.6552 92 82.0735 92 77.6552V8C92 3.58172 88.4183 0 84 0Z" fill="#FFC04D"/>
-<path d="M24.4043 15.5052H58.4152L66.1626 23.2526V38.4374L63.0637 41.6139L68.5643 47.192V61.3696L60.1971 69.7368H24.4043V15.5052ZM52.9921 38.205L55.7811 35.416V27.0488L53.0696 24.3372H34.7083V38.205H52.9921ZM54.8515 60.9048L58.1828 57.5734V49.981L54.8515 46.6496H34.7083V60.9048H54.8515Z" fill="white"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background tile -->
+  <rect width="32" height="32" rx="7" fill="#080808"/>
+  <!-- Subtle border -->
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+  <!--
+    Letter "B" as compound path.
+    Outer shape (clockwise) + two counter holes (counterclockwise)
+    fill-rule="evenodd" punches the holes out.
+  -->
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="
+      M 7 6
+      L 7 26
+      L 18.5 26
+      Q 26 26 26 21
+      Q 26 17 19.5 16
+      Q 23 15.5 23 11
+      Q 23 6 16.5 6
+      Z
+
+      M 11 9
+      L 15.5 9
+      Q 19.5 9 19.5 11.5
+      Q 19.5 14 15.5 14
+      L 11 14
+      Z
+
+      M 11 18
+      L 17 18
+      Q 22 18 22 21
+      Q 22 24.5 17 24.5
+      L 11 24.5
+      Z
+    "
+    fill="white"
+  />
 </svg>

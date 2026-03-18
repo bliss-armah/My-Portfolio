@@ -2,7 +2,6 @@ import profile from "../assets/images/IMG_2368.jpg";
 import { Navibar } from "../components";
 import { motion } from "framer-motion";
 import { Card } from "../components/ui/card";
-import { Footer } from "../components";
 
 const AboutPage = () => {
   return (
