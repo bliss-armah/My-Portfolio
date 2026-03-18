@@ -1,7 +1,6 @@
 import {
   About,
   Connect,
-  Services,
   Skills,
   Timeline,
   Works,
@@ -15,7 +14,7 @@ const HomePage = () => {
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      {/* <Services /> */}
       <Works />
       <Skills />
       <Timeline />

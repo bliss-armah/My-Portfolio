@@ -2,7 +2,7 @@ import { socialIcons } from "../utils/data";
 import { Link as ScrollLinkBase } from "react-scroll";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import heroImg from "../assets/images/hero-img.jpeg";
+import heroImg from "../assets/images/IMG_2368.jpg";
 import type React from "react";
 
 // Type cast to avoid react-scroll/react-18 type mismatch
