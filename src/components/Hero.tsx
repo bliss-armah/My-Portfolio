@@ -32,7 +32,6 @@ const Hero = () => {
 
       <div className="section-container relative w-full py-20 lg:py-0 lg:min-h-[calc(100vh-68px)] lg:flex lg:items-center">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-20 items-center w-full">
-
           {/* Left — text content */}
           <div>
             <motion.p
@@ -52,8 +51,9 @@ const Hero = () => {
               animate="visible"
               custom={0.2}
             >
-              Bliss<br />
-              Armah
+              Bliss
+              <br />
+              Armah-Nwanwah
             </motion.h1>
 
             <motion.p
@@ -126,7 +126,7 @@ const Hero = () => {
             <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-[hsl(var(--border))]">
               <img
                 src={heroImg}
-                alt="Bliss Armah"
+                alt="Bliss Armah-Nwanwah"
                 className="w-full h-full object-cover object-top"
                 style={{ filter: "grayscale(100%) contrast(1.1)" }}
               />
@@ -141,8 +141,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
             >
-              <div className="font-display font-bold text-2xl text-white leading-none mb-1">3+</div>
-              <div className="text-xs text-[hsl(var(--muted-foreground))] tracking-wide">Years of experience</div>
+              <div className="font-display font-bold text-2xl text-white leading-none mb-1">
+                3+
+              </div>
+              <div className="text-xs text-[hsl(var(--muted-foreground))] tracking-wide">
+                Years of experience
+              </div>
             </motion.div>
 
             {/* Floating stat — projects */}
@@ -152,8 +156,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.5 }}
             >
-              <div className="font-display font-bold text-2xl text-white leading-none mb-1">10+</div>
-              <div className="text-xs text-[hsl(var(--muted-foreground))] tracking-wide">Projects delivered</div>
+              <div className="font-display font-bold text-2xl text-white leading-none mb-1">
+                10+
+              </div>
+              <div className="text-xs text-[hsl(var(--muted-foreground))] tracking-wide">
+                Projects delivered
+              </div>
             </motion.div>
           </motion.div>
         </div>

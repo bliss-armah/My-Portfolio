@@ -44,7 +44,7 @@ const Navbar = () => {
             href="/"
             className="font-display font-semibold text-sm tracking-[0.18em] text-white uppercase hover:text-white/80 transition-colors"
           >
-            Bliss Armah
+            Bliss Armah-Nwanwah
           </a>
 
           {/* Desktop nav */}

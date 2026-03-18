@@ -20,7 +20,6 @@ const About = () => {
 
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-16 items-start">
-
           {/* Left — text */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -32,29 +31,41 @@ const About = () => {
               About
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.05]">
-              Turning ideas into<br />
-              <span className="text-[hsl(var(--muted-foreground))]">digital reality.</span>
+              Turning ideas into
+              <br />
+              <span className="text-[hsl(var(--muted-foreground))]">
+                digital reality.
+              </span>
             </h2>
 
             <div className="space-y-5 mb-10">
               <p className="text-[hsl(var(--muted-foreground))] text-base leading-relaxed">
-                I'm Bliss Armah — a full-stack developer with a strong foundation in frontend
-                engineering and a passion for building products that are both functional and
-                beautifully crafted. I work across the entire stack, from pixel-perfect
-                interfaces to scalable backend systems.
+                I'm Bliss Armah-Nwanwah — a full-stack developer with a strong
+                foundation in frontend engineering and a passion for building
+                products that are both functional and beautifully crafted. I
+                work across the entire stack, from pixel-perfect interfaces to
+                scalable backend systems.
               </p>
               <p className="text-[hsl(var(--muted-foreground))] text-base leading-relaxed">
-                I enjoy the challenge of solving complex problems and turning them into
-                simple, intuitive experiences. With an AWS Cloud Practitioner certification
-                and experience in modern frameworks, I bring both technical depth and
-                design sensibility to every project.
+                I enjoy the challenge of solving complex problems and turning
+                them into simple, intuitive experiences. With an AWS Cloud
+                Practitioner certification and experience in modern frameworks,
+                I bring both technical depth and design sensibility to every
+                project.
               </p>
             </div>
 
             {/* Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[hsl(var(--border))] rounded-xl overflow-hidden mb-10">
-              {["Frontend Architecture", "API & Backend Design", "Cloud Deployment"].map((pillar) => (
-                <div key={pillar} className="bg-[hsl(var(--background))] px-4 py-4">
+              {[
+                "Frontend Architecture",
+                "API & Backend Design",
+                "Cloud Deployment",
+              ].map((pillar) => (
+                <div
+                  key={pillar}
+                  className="bg-[hsl(var(--background))] px-4 py-4"
+                >
                   <p className="text-white text-sm font-medium m-0">{pillar}</p>
                 </div>
               ))}
@@ -81,8 +92,12 @@ const About = () => {
                 key={stat.label}
                 className="px-6 py-6 flex items-center justify-between group hover:border-white/20 transition-colors"
               >
-                <div className="font-display text-4xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm text-[hsl(var(--muted-foreground))] text-right">{stat.label}</div>
+                <div className="font-display text-4xl font-bold text-white">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-[hsl(var(--muted-foreground))] text-right">
+                  {stat.label}
+                </div>
               </Card>
             ))}
 

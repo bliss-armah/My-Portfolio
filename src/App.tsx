@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Footer } from "./components";
-import { HomePage, ProductPage, AboutPage, ContactPage, LoginPage, AdminPage } from "./pages";
+import { HomePage, ProductPage, AboutPage, LoginPage, AdminPage } from "./pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ProtectedAdmin, ProtectedRoute } from "./utils/protected";
 
 function FooterRenderer() {
   const location = useLocation();
-  const footerExcludedPaths = ["/adminlogin", "/admin", "/projects", "/contact"];
+  const footerExcludedPaths = ["/adminlogin", "/admin", "/projects"];
   const shouldDisplayFooter = !footerExcludedPaths.includes(location.pathname);
   return shouldDisplayFooter ? <Footer /> : null;
 }
@@ -20,7 +20,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<ProductPage />} />
-          <Route path="/contact" element={<ContactPage />} />
           <Route
             path="/adminlogin"
             element={

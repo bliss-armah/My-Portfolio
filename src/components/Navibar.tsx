@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
   { name: "Projects", to: "/projects" },
-  { name: "Contact", to: "/contact" },
+  { name: "Contact", to: "/#contact" },
 ];
 
 const Navibar = () => {
@@ -38,7 +38,7 @@ const Navibar = () => {
             href="/"
             className="font-display font-semibold text-sm tracking-[0.18em] text-white uppercase hover:text-white/80 transition-colors"
           >
-            Bliss Armah
+            Bliss Armah-Nwanwah
           </a>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -60,12 +60,12 @@ const Navibar = () => {
           </nav>
 
           <div className="flex items-center gap-3">
-            <NavLink
-              to="/contact"
+            <a
+              href="/#contact"
               className="hidden md:inline-flex items-center px-5 py-2 text-xs font-semibold text-white border border-[hsl(var(--border))] rounded-full hover:bg-white hover:text-black transition-all duration-200 tracking-wider uppercase"
             >
               Hire me
-            </NavLink>
+            </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 text-[hsl(var(--muted-foreground))] hover:text-white transition-colors"
@@ -95,13 +95,23 @@ const Navibar = () => {
                   transition={{ delay: i * 0.06, duration: 0.3 }}
                   className="border-b border-[hsl(var(--border))]"
                 >
-                  <NavLink
-                    to={link.to}
-                    onClick={() => setIsOpen(false)}
-                    className="block py-5 text-4xl font-display font-bold text-[hsl(var(--muted-foreground))] hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </NavLink>
+                  {link.to.startsWith("#") || link.to.startsWith("/#") ? (
+                    <a
+                      href={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className="block py-5 text-4xl font-display font-bold text-[hsl(var(--muted-foreground))] hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className="block py-5 text-4xl font-display font-bold text-[hsl(var(--muted-foreground))] hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </NavLink>
+                  )}
                 </motion.li>
               ))}
             </ul>
