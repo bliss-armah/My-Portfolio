@@ -109,7 +109,6 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 };

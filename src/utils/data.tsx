@@ -145,5 +145,5 @@ export const works = [
 export const contactForm = [
   { id: 1, icon: <BsTelephone />, text: "+233245289983" },
   { id: 2, icon: <FiMail />, text: "blissarmah8@gmail.com" },
-  { id: 3, icon: <GoLocation />, text: "Tarkwa, Ghana" },
+  { id: 3, icon: <GoLocation />, text: "Ghana" },
 ];
