@@ -1,33 +1,27 @@
-import { contactForm } from '../utils/data'
+import { contactForm } from "../utils/data";
 
 const ContactText = () => {
   return (
     <div>
-        <article>
-            <div className="section-title about-title">
-              <h2 className="font-semibold">
-                we would love to hear{" "}
-                <span className="text-[#e9b949]">from you</span>
-              </h2>
-            </div>
-            <div className=" w-full ">
-              {contactForm.map((item) => (
-                <div
-                  className=" flex justify-between items-center mb-5"
-                  key={item.id}
-                >
-                  <div className="social-icon bg-[#f7d06e] w-[55px] h-[55px] rounded-full flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                  <div className="w-[80%] text-left text-[1.5rem] text-[#617d98]">
-                    {item.text}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </article>
-    </div>
-  )
-}
+      <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-8 leading-[1.1]">
+        We'd love to hear<br />from you.
+      </h2>
 
-export default ContactText
+      <div className="flex flex-col gap-4">
+        {contactForm.map((item) => (
+          <div
+            key={item.id}
+            className="flex items-center gap-4 p-4 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))]"
+          >
+            <div className="w-10 h-10 rounded-lg bg-[hsl(var(--muted))] flex items-center justify-center text-[hsl(var(--muted-foreground))] shrink-0">
+              {item.icon}
+            </div>
+            <span className="text-sm text-[hsl(var(--muted-foreground))]">{item.text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ContactText;

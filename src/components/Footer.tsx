@@ -1,26 +1,29 @@
 import { socialIcons } from "../utils/data";
 
 const Footer = () => {
- const date = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
-    <div>
-      <footer className="footer">
-        <ul className="social-icons">
-          {socialIcons.map((icon, index) => (
-            <li key={index}>
-              <a href={icon.href}  target="_blank" className="social-icon">
-                {icon.icon}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <p>
-          &copy; <span>{date}</span> bliss code. all rights reserved
+    <footer className="border-t border-[hsl(var(--border))]">
+      <div className="section-container h-16 flex items-center justify-between">
+        <p className="text-xs text-[hsl(var(--muted-foreground))]/50 m-0">
+          &copy; {year} Bliss Armah. All rights reserved.
         </p>
-      </footer>
-    </div>
+        <div className="flex items-center gap-4">
+          {socialIcons.map((icon, index) => (
+            <a
+              key={index}
+              href={icon.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[hsl(var(--muted-foreground))]/50 hover:text-white transition-colors text-sm"
+            >
+              {icon.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+    </footer>
   );
 };
 

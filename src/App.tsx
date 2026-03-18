@@ -5,46 +5,49 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ProtectedAdmin, ProtectedRoute } from "./utils/protected";
 
-// Custom component to conditionally render the Footer
 function FooterRenderer() {
   const location = useLocation();
-
-  // Array of paths where the footer should not be displayed
-  const footerExcludedPaths = ["/adminlogin", "/admin","/projects","/contact"];
-
-  // Check if the current path is included in the array of excluded paths
+  const footerExcludedPaths = ["/adminlogin", "/admin", "/projects", "/contact"];
   const shouldDisplayFooter = !footerExcludedPaths.includes(location.pathname);
-
   return shouldDisplayFooter ? <Footer /> : null;
 }
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<ProductPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route
-          path="/adminlogin"
-          element={
-            <ProtectedRoute>
-              <LoginPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin"
-          element={
-            <ProtectedAdmin>
-              <AdminPage />
-            </ProtectedAdmin>
-          }
-        />
-      </Routes>
-      <FooterRenderer />
-      <ToastContainer theme="colored" toastStyle={{ backgroundColor: "#f7d06e" }} />
+      <div className="min-h-screen bg-[hsl(var(--background))]">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProductPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route
+            path="/adminlogin"
+            element={
+              <ProtectedRoute>
+                <LoginPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedAdmin>
+                <AdminPage />
+              </ProtectedAdmin>
+            }
+          />
+        </Routes>
+        <FooterRenderer />
+      </div>
+      <ToastContainer
+        theme="dark"
+        toastStyle={{
+          backgroundColor: "hsl(var(--card))",
+          color: "hsl(var(--foreground))",
+          border: "1px solid hsl(var(--border))",
+        }}
+      />
     </BrowserRouter>
   );
 }

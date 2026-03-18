@@ -12,20 +12,14 @@ import {
 const HomePage = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Hero />
-      <div id="about">
-        <About />
-      </div>
+      <About />
       <Services />
-      <div id="product">
-        <Works />
-      </div>
-      <div id="contact">
-        <Connect />
-      </div>
+      <Works />
       <Skills />
       <Timeline />
+      <Connect />
     </div>
   );
 };

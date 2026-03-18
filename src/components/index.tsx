@@ -9,7 +9,6 @@ import Services from "./Services";
 import Skills from "./Skills";
 import Timeline from "./Timeline";
 import Works from "./Works";
-import AnimatedBackground from "./AnimatedBackground";
 
 export {
   About,
@@ -23,5 +22,4 @@ export {
   Works,
   Hero,
   Navibar,
-  AnimatedBackground,
 };
